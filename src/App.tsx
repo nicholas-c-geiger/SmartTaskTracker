@@ -61,6 +61,7 @@ function App() {
         input={input}
         setInput={setInput}
         addTask={addTask}
+        filter={filter}
         setFilter={setFilter}
         completionRate={completionRate}
       />

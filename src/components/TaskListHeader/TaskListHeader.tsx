@@ -7,6 +7,7 @@ interface Props {
   input: string;
   setInput: Dispatch<SetStateAction<string>>;
   addTask: () => void;
+  filter: Filter;
   setFilter: Dispatch<SetStateAction<Filter>>;
   completionRate: number;
 }
@@ -15,6 +16,7 @@ export default function TaskListHeader({
   input,
   setInput,
   addTask,
+  filter,
   setFilter,
   completionRate,
 }: Props) {
@@ -33,9 +35,24 @@ export default function TaskListHeader({
       </div>
 
       <div className={styles.filterRow}>
-        <button onClick={() => setFilter("all")}>All</button>
-        <button onClick={() => setFilter("active")}>Active</button>
-        <button onClick={() => setFilter("completed")}>Completed</button>
+        <button
+          className={`${styles.filterButton} ${filter === "all" ? styles.active : ""}`.trim()}
+          onClick={() => setFilter("all")}
+        >
+          All
+        </button>
+        <button
+          className={`${styles.filterButton} ${filter === "active" ? styles.active : ""}`.trim()}
+          onClick={() => setFilter("active")}
+        >
+          Active
+        </button>
+        <button
+          className={`${styles.filterButton} ${filter === "completed" ? styles.active : ""}`.trim()}
+          onClick={() => setFilter("completed")}
+        >
+          Completed
+        </button>
       </div>
 
       <p className={styles.completionParagraph}>{completionRate}% completed</p>
