@@ -1,0 +1,25 @@
+.taskListHeader {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.taskListHeaderInput {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.taskListHeaderButton {
+  padding: 8px 12px;
+  background: #1976d2;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.taskListHeaderButton:hover {
+  background: #145ea8;
+}

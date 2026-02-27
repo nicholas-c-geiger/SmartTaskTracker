@@ -1,5 +1,6 @@
 import "./App.css";
 import { useState, useMemo } from "react";
+import TaskListHeader from "./components/TaskListHeader/TaskListHeader";
 import type { Task } from "./types";
 import { useLocalStorage } from "./hooks/useLocalStorage";
 
@@ -56,14 +57,7 @@ function App() {
     <div className="container">
       <h2>Smart Task Tracker</h2>
 
-      <div>
-        <input
-          value={input}
-          onChange={e => setInput(e.target.value)}
-          placeholder="Add a task..."
-        />
-        <button onClick={addTask}>Add</button>
-      </div>
+      <TaskListHeader input={input} setInput={setInput} addTask={addTask} />
 
       <div style={{ marginTop: 10 }}>
         <button onClick={() => setFilter("all")}>All</button>
