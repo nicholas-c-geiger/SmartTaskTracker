@@ -1,0 +1,29 @@
+.taskListBodyList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.taskListBodyItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.taskListBodyTitle {
+  cursor: pointer;
+}
+
+.completed {
+  text-decoration: line-through;
+  color: #6b6b6b;
+}
+
+.deleteButton {
+  background: transparent;
+  border: none;
+  color: #b00;
+  cursor: pointer;
+}

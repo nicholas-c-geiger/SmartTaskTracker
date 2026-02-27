@@ -1,6 +1,7 @@
 import "./App.css";
 import { useState, useMemo } from "react";
 import TaskListHeader from "./components/TaskListHeader/TaskListHeader";
+import TaskListBody from "./components/TaskListBody/TaskListBody";
 import type { Task } from "./types";
 import { useLocalStorage } from "./hooks/useLocalStorage";
 
@@ -66,22 +67,7 @@ function App() {
         completionRate={completionRate}
       />
 
-      <ul>
-        {filteredTasks.map(task => (
-          <li key={task.id}>
-            <span
-              onClick={() => toggleTask(task.id)}
-              style={{
-                textDecoration: task.completed ? "line-through" : "none",
-                cursor: "pointer",
-              }}
-            >
-              {task.title}
-            </span>
-            <button onClick={() => deleteTask(task.id)}>X</button>
-          </li>
-        ))}
-      </ul>
+      <TaskListBody tasks={filteredTasks} toggleTask={toggleTask} deleteTask={deleteTask} />
     </div>
   );
 }
