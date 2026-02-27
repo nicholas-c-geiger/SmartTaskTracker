@@ -57,15 +57,13 @@ function App() {
     <div className="container">
       <h2>Smart Task Tracker</h2>
 
-      <TaskListHeader input={input} setInput={setInput} addTask={addTask} />
-
-      <div style={{ marginTop: 10 }}>
-        <button onClick={() => setFilter("all")}>All</button>
-        <button onClick={() => setFilter("active")}>Active</button>
-        <button onClick={() => setFilter("completed")}>Completed</button>
-      </div>
-
-      <p>{completionRate}% completed</p>
+      <TaskListHeader
+        input={input}
+        setInput={setInput}
+        addTask={addTask}
+        setFilter={setFilter}
+        completionRate={completionRate}
+      />
 
       <ul>
         {filteredTasks.map(task => (
